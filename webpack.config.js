@@ -50,20 +50,16 @@ module.exports = merge(
       // }),
       new HtmlWebpackPlugin({
         title: "My Workspace",
-        template: path.resolve(__dirname, "public/index.html"),
+        template: path.resolve(__dirname, "src/index.html"),
       }),
-      // new CopyPlugin({
-      //   patterns: [
-      //     {
-      //       from: "src/img",
-      //       to: "img",
-      //     },
-      //     {
-      //       from: "src/fonts",
-      //       to: "fonts",
-      //     },
-      //   ],
-      // }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: "public",
+            to: "public",
+          },
+        ],
+      }),
     ],
   })
 );
