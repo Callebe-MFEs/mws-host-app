@@ -1,8 +1,8 @@
-import { MyWorkspace } from "./my-workspace";
-export { MyWorkspace };
+import { MyWorkspaceComponent } from "./my-workspace";
+export { MyWorkspaceComponent as MyWorkspace };
 
 describe("MyWorkspace", () => {
-  let component: MyWorkspace;
+  let component: MyWorkspaceComponent;
 
   beforeEach(async () => {
     component = window.document.createElement("my-workspace");

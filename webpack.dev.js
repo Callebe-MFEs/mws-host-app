@@ -9,4 +9,16 @@ module.exports = {
       }),
     ],
   },
+  devServer: {
+    static: [path.resolve(__dirname, "dist")],
+    historyApiFallback: true,
+    open: true,
+    proxy: [
+      {
+        context: ["/applications"],
+        target: "http://localhost:8080",
+        pathRewrite: { "^/applications": "/public/applications.json" },
+      },
+    ],
+  },
 };

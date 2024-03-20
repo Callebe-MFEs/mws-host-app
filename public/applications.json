@@ -1,0 +1,15 @@
+[
+  {
+    "name": "home",
+    "activeWhen": "^/$",
+    "remoteEntry": {
+      "url": "/remoteEntry.js",
+      "scope": "myWorkspaceHomeApp",
+      "module": "./myWorkspaceHomeApp",
+      "type": "webpack"
+    },
+    "label": "Home",
+    "route": "/",
+    "type": "home"
+  }
+]

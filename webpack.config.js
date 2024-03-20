@@ -20,34 +20,28 @@ module.exports = merge(
       path: path.resolve(__dirname, "dist"),
       publicPath: "auto",
     },
-    devServer: {
-      static: [path.resolve(__dirname, "dist")],
-      historyApiFallback: true,
-      open: true,
-      // port: 3005,
-    },
     plugins: [
-      // new ModuleFederationPlugin({
-      //   name: "mfeAppLit31",
-      //   filename: "remoteEntry.js",
-      //   exposes: {
-      //     "./MFEAppLit31": "./src/mfe",
-      //   },
-      //   shared: {
-      //     lit: {
-      //       requiredVersion: deps["lit"],
-      //       strictVersion: true,
-      //     },
-      //     "lit-html": {
-      //       requiredVersion: deps["lit-html"],
-      //       strictVersion: true,
-      //     },
-      //     "lit-element": {
-      //       requiredVersion: deps["lit-element"],
-      //       strictVersion: true,
-      //     },
-      //   },
-      // }),
+      new ModuleFederationPlugin({
+        name: "myWorkspaceHomeApp",
+        filename: "remoteEntry.js",
+        exposes: {
+          "./myWorkspaceHomeApp": "./src/mws-home/mws-home.mfe.ts",
+        },
+        shared: {
+          lit: {
+            requiredVersion: deps["lit"],
+            strictVersion: true,
+          },
+          "lit-html": {
+            requiredVersion: deps["lit-html"],
+            strictVersion: true,
+          },
+          "lit-element": {
+            requiredVersion: deps["lit-element"],
+            strictVersion: true,
+          },
+        },
+      }),
       new HtmlWebpackPlugin({
         title: "My Workspace",
         template: path.resolve(__dirname, "src/index.html"),

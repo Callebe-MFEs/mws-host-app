@@ -7,3 +7,14 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
+
+.mfe {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+}
+
+.mfe:empty {
+  display: none;
+}
