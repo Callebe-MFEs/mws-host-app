@@ -12,7 +12,7 @@ export const template = (
     <nav class="mws-navbar">
       <!-- Left Section -->
       <div class="mws-navbar__items">
-        <a class="mws-navbar__brand">${data.brand}</a>
+        <a class="mws-navbar__brand" @click=${data.brandClick}>${data.brand}</a>
         <slot name="mws-navbar-left"></slot>
       </div>
 

@@ -19,10 +19,10 @@ export class MWSNavbarItemComponent
   id: string;
 
   @property()
-  url?: string;
+  url: string;
 
-  @property({ type: Boolean })
-  active?: boolean;
+  @property({ type: Boolean, reflect: true })
+  active: boolean;
 
   activate = () => {
     this.active = true;

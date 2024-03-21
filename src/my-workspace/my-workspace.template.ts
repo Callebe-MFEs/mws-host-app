@@ -12,14 +12,15 @@ export const template = (
           brand="My Workspace"
           username="Callebe Gomes"
           userAvatar="/public/img/avatar.svg"
+          @mws-navbar-brand-click=${() => data.navigateTo("/")}
         >
           ${data.items.map(
             (item) => html`
               <mws-navbar-item
                 slot="mws-navbar-center"
-                url="${item.route}"
-                id="${item.label}"
-                active="${item.active}"
+                .url="${item.route}"
+                .id="${item.label}"
+                ?active="${item.active}"
                 @mws-navbar-item-activated="${() =>
                   data.navigateTo(item.route)}"
                 >${item.label}</mws-navbar-item

@@ -1,5 +1,6 @@
 import "./index.scss";
 import { bootstrap, getRemote } from "./mfe";
+import { MWSNavbarEvents } from "./mws-navbar";
 
 export * from "./my-workspace";
 

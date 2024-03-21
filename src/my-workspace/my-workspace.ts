@@ -23,6 +23,8 @@ export class MyWorkspaceComponent
       item.active = item.route === route;
     }
 
+    this.items = [...this.items];
+
     window.history.pushState({}, "", route);
   };
 

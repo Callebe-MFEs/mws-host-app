@@ -12,7 +12,7 @@ module.exports = merge(
   common,
   merge(dev, {
     entry: {
-      main: path.resolve(__dirname, "src/index.ts"),
+      main: path.resolve(__dirname, "src/index.js"),
     },
     mode: "development",
     output: {

@@ -19,6 +19,11 @@ module.exports = {
         target: "http://localhost:8080",
         pathRewrite: { "^/applications": "/public/applications.json" },
       },
+      {
+        context: ["/apps/tasks"],
+        target: "http://localhost:3005",
+        pathRewrite: { "^/apps/tasks": "" },
+      },
     ],
   },
 };

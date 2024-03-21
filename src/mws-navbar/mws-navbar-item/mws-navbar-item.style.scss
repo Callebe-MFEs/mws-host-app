@@ -39,7 +39,7 @@
 }
 
 .mws-navbar__link:hover,
-.mws-navbar__link--active {
+:host([active]) {
   font-weight: 700;
   // color: var(--ifm-navbar-link-hover-color);
 }
