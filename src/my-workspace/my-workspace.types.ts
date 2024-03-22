@@ -1,3 +1,5 @@
+import { User } from "../services/user.service";
+
 export interface MyWorkspace {
   items: Array<{
     label: string;
@@ -6,7 +8,9 @@ export interface MyWorkspace {
   }>;
 }
 
-export interface MyWorkspaceInternal {}
+export interface MyWorkspaceInternal {
+  user: User;
+}
 
 export interface MyWorkspaceHandlers {
   navigateTo: (route: string) => void;

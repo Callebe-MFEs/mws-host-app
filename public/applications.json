@@ -24,5 +24,18 @@
     "label": "Tasks",
     "route": "/tasks",
     "type": "app"
+  },
+  {
+    "name": "user-profile",
+    "activeWhen": "^/user-profile(/.*)?$",
+    "remoteEntry": {
+      "url": "/apps/user-profile/remoteEntry.js",
+      "scope": "mwsUserProfile",
+      "module": "./mwsUserProfile",
+      "type": "module"
+    },
+    "label": "User Profile",
+    "route": "/user-profile",
+    "type": "user"
   }
 ]

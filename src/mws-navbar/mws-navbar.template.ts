@@ -30,7 +30,10 @@ export const template = (
       <!-- Right Section -->
       <div class="mws-navbar__items mws-navbar__items--right">
         <slot name="mws-navbar-right"></slot>
-        <a class="mws-navbar__item mws-navbar__user-info">
+        <a
+          class="mws-navbar__item mws-navbar__user-info"
+          @click=${data.userInfoClick}
+        >
           <span>${data.username}</span>
           <img .src=${data.userAvatar} />
         </a>

@@ -1,6 +1,6 @@
 import "./index.scss";
 import { bootstrap, getRemote } from "./mfe";
-import { MWSNavbarEvents } from "./mws-navbar";
+import { UserService } from "./services/user.service";
 
 export * from "./my-workspace";
 
@@ -55,6 +55,7 @@ function mfeConfigurations(applications: Array<any>) {
     // for this example, we are passing the applications array and the basepath of the MFE.
     customProps: {
       basepath: app.route,
+      userService: UserService.instance,
     },
   }));
 }
@@ -74,6 +75,7 @@ function prepareTemplate(applications: Array<any>) {
   }
 
   myWorkspace.items = items;
+  myWorkspace.user = UserService.instance.getUser();
 
   return myWorkspace;
 }

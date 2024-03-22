@@ -7,6 +7,7 @@ import {
   MyWorkspaceHandlers,
   MyWorkspaceInternal,
 } from "./my-workspace.types";
+import { User } from "../services/user.service";
 
 @customElement("my-workspace")
 export class MyWorkspaceComponent
@@ -17,6 +18,9 @@ export class MyWorkspaceComponent
 
   @property({ type: Array })
   items: MyWorkspace["items"] = [];
+
+  @property({ type: Object })
+  user: User;
 
   navigateTo: (route: string) => void = (route: string) => {
     for (const item of this.items) {

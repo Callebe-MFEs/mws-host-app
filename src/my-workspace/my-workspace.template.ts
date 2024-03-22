@@ -10,9 +10,10 @@ export const template = (
       <header>
         <mws-navbar
           brand="My Workspace"
-          username="Callebe Gomes"
-          userAvatar="/public/img/avatar.svg"
+          username=${`${data.user.firstName} ${data.user.lastName}`}
+          userAvatar=${data.user.avatar}
           @mws-navbar-brand-click=${() => data.navigateTo("/")}
+          @mws-navbar-user-info-click=${() => data.navigateTo("/user-profile")}
         >
           ${data.items.map(
             (item) => html`
@@ -27,15 +28,6 @@ export const template = (
               >
             `
           )}
-          <!-- <mws-navbar-item slot="mws-navbar-center" url="/tasks" id="tasks"
-            >Tasks</mws-navbar-item
-          >
-          <mws-navbar-item
-            slot="mws-navbar-center"
-            url="/messages"
-            id="messages"
-            >Messages</mws-navbar-item
-          > -->
         </mws-navbar>
       </header>
       <main><slot></slot></main>

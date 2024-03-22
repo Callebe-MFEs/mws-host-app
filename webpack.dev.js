@@ -24,6 +24,11 @@ module.exports = {
         target: "http://localhost:3005",
         pathRewrite: { "^/apps/tasks": "" },
       },
+      {
+        context: ["/apps/user-profile"],
+        target: "http://localhost:4200",
+        pathRewrite: { "^/apps/user-profile": "" },
+      },
     ],
   },
 };
