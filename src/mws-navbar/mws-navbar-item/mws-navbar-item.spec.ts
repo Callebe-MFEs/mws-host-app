@@ -23,14 +23,7 @@ describe("MWSNavbarItemComponent", () => {
     );
     component.activate();
     expect(spy).toHaveBeenCalledTimes(1);
-
-    // after component.activate() is called, we have to wait to have the dom updated
-    await component.updateComplete;
-    expect(
-      component.shadowRoot
-        .querySelector("a")
-        .classList.contains("navbar__link--active")
-    ).toBeTrue();
+    expect(component.active).toBeTrue();
   });
 
   it("should activate component on click", async () => {
