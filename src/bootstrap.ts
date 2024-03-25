@@ -75,7 +75,10 @@ function prepareTemplate(applications: Array<any>) {
   }
 
   myWorkspace.items = items;
-  myWorkspace.user = UserService.instance.getUser();
+
+  UserService.instance.getUser().subscribe((user) => {
+    myWorkspace.user = user;
+  });
 
   return myWorkspace;
 }

@@ -9,7 +9,7 @@ export interface MyWorkspace {
 }
 
 export interface MyWorkspaceInternal {
-  user: User;
+  user: User | undefined;
 }
 
 export interface MyWorkspaceHandlers {

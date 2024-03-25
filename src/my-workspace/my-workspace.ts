@@ -20,7 +20,7 @@ export class MyWorkspaceComponent
   items: MyWorkspace["items"] = [];
 
   @property({ type: Object })
-  user: User;
+  user: User | undefined = undefined;
 
   navigateTo: (route: string) => void = (route: string) => {
     for (const item of this.items) {

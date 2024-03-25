@@ -1,3 +1,5 @@
+import { ReplaySubject } from "rxjs";
+
 export type User = {
   firstName: string;
   lastName: string;
@@ -24,7 +26,7 @@ export type User = {
 
 // Memory User.
 // It simulates the user data that would come from an authenticated session.
-const user: User = {
+let user: User = {
   firstName: "John",
   lastName: "Doe",
   email: "john.doe@cnh.com",
@@ -48,6 +50,8 @@ const user: User = {
   },
 };
 
+export const userSubject = new ReplaySubject<User>(1);
+
 export class UserService {
   protected static $instance: UserService;
 
@@ -59,10 +63,15 @@ export class UserService {
   }
 
   protected constructor() {
-    // Do nothing
+    userSubject.next(user);
   }
 
-  getUser(): User {
-    return user;
+  getUser(): ReplaySubject<User> {
+    return userSubject;
+  }
+
+  setUser(value: User): void {
+    user = { ...user, ...value };
+    userSubject.next(user);
   }
 }

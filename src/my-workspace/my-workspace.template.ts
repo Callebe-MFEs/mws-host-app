@@ -10,8 +10,8 @@ export const template = (
       <header>
         <mws-navbar
           brand="My Workspace"
-          username=${`${data.user.firstName} ${data.user.lastName}`}
-          userAvatar=${data.user.avatar}
+          username=${`${data.user?.firstName} ${data.user?.lastName}`}
+          userAvatar=${data.user?.avatar}
           @mws-navbar-brand-click=${() => data.navigateTo("/")}
           @mws-navbar-user-info-click=${() => data.navigateTo("/user-profile")}
         >
