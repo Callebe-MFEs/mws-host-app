@@ -29,6 +29,11 @@ module.exports = {
         target: "http://localhost:4200",
         pathRewrite: { "^/apps/user-profile": "" },
       },
+      {
+        context: ["/apps/messages"],
+        target: "http://localhost:4173",
+        pathRewrite: { "^/apps/messages": "" },
+      },
     ],
   },
 };
