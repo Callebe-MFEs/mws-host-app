@@ -20,6 +20,8 @@ export * from "./my-workspace";
 
   // 4. bootstrap Single SPA
   bootstrap(config);
+
+  goToNext();
 })();
 
 const remote = getRemote(window);
@@ -81,4 +83,15 @@ function prepareTemplate(applications: Array<any>) {
   });
 
   return myWorkspace;
+}
+
+function goToNext() {
+  let query: URLSearchParams = new URLSearchParams(window.location.search);
+
+  if (query.has("next")) {
+    const next = query.get("next");
+    query.delete("next");
+    let params = query.size ? `?${query.toString()}` : "";
+    window.history.pushState({}, "", `${next}${params}`);
+  }
 }
