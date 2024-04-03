@@ -1,9 +1,7 @@
 FROM nginx:1.23.3-alpine as build
 
 LABEL name="mws-host-app" \
-      description="My Workspace host application application" \
-      eu.mia-platform.url="https://www.mia-platform.eu" \
-      eu.mia-platform.version="0.1.0"
+      description="My Workspace host application application"
 
 COPY nginx /etc/nginx
 
